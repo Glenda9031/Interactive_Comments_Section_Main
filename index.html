@@ -8,8 +8,20 @@
   <title>Frontend Mentor | Interactive comments section</title>
 </head>
 <body>
-
-  <!-- Pull dynamic content from the data.json file -->
+  <section class="comments-container">
+    <div class="comments-life">
+      <!-- Single Comment Template -->
+       <div class="comment-container hidden">
+          <div class="comment">
+            <div class="comment-edit-placeholder hidden"><textarea></textarea><button id="comment-edit-btn">Update</button></div>
+            <div class="comment-score">
+              <button id="add-score-btn"></button>
+            </div>
+          </div>
+       </div>
+    </div>
+  </section>
+  
   
 <script src="script.js"></script>
 </body>
