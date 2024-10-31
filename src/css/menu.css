@@ -44,6 +44,23 @@
     transform: translate3d(-2rem, 0, 0) rotate(90deg);
 }
 
+.menu-open:checked + .menu-open-button .line-1 {
+    -webkit-tranform: translate3d(-0.5rem, 0, 0) rotate(45deg);
+    transform: translate3d(-0.5rem, 0, 0) rotate(45deg);
+}
+
+.menu-open:checked + .menu-open-button .line-2 {
+    -webkit-tranform: translate3d(-0.5rem, 0, 0) rotate(-45deg);
+    transform: translate3d(-0.5rem, 0, 0) rotate(-45deg);
+}
+
+.menu {
+    position: fixed;
+    top: 1.5rem;
+    left: 2rem;
+    width: 2rem;
+    height: 2rem;
+}
 
 
 
