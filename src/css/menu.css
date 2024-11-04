@@ -67,6 +67,7 @@
 .menu-item:nth-child(5),
 .menu-item:nth-child(6),
 .menu-item:nth-child(7),
+.menu-item:nth-child(8),
 .menu-item:nth-child(9) {
     -webkit-transition-duration: 180ms;
     transition-duration: 180ms;
@@ -87,7 +88,6 @@
     -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
     transform: scale(1.2, 1.2) translate3d(0, 0, 0);
 }
-
 
 .menu-open:checked + .menu-open-button {
     -webkit-transition-timing-function: linear;
@@ -159,8 +159,8 @@
     }
 
     .menu-open:checked + .menu-open-button .line-2 {
-        -webkit-transform: translate3d(0, 1.5rem, 0) rotate(45deg);
-        transform: translate3d(0, 1.5rem, 0) rotate(45deg);
+        -webkit-transform: translate3d(0, 1.5rem, 0) rotate(-45deg);
+        transform: translate3d(0, 1.5rem, 0) rotate(-45deg);
     }
 
     .menu {

@@ -87,6 +87,56 @@ main {
     gap: 1rem;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    transition: all 3s ease-in-out;
+}
+
+button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
+    filter: brightness(200%);
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.score {
+    color: var(--light-gray);
+    font-weight: 500;
+    line-height: var(--r19);
+}
+
+.username {
+    color: inherit;
+    font-weight: 500;
+    text-decoration: none;
+    transition; all 0.3s ease;
+}
+
+.username:hover {
+    color: var(--white);
+}
+
+.dot-symbol,
+.time {
+    color: var(--gray2);
+    font-size:var(--r14);
+}
+
+#current-user-indicator {
+    background-color: var(--moderate-blue);
+    border-radius: 0.25rem;
+    color: var(--light-gray);
+    font-weight: 500;
+    font-size: var(--r12);
+    line-height: 1rem;
+    padding: .0625rem .375rem .125rem .375rem;
+}
+
 
 
 
