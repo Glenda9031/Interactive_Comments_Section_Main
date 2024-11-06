@@ -137,7 +137,65 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     padding: .0625rem .375rem .125rem .375rem;
 }
 
+#delete-comment-heading {
+    font-weight: 500;
+    font-size: var(--r20);
+}
 
+#delete-comment-msg {
+    colo: var(--gray3);
+}
+
+.replies-to-comment-container {
+    display: grid;
+    gap: 1rem;
+    position: relative;
+    padding-left: 1rem 0 0 1.25rem;
+    margin-left: 0.25rem;
+}
+
+.replies-to-comment-container::before {
+    content: '';
+    position: absolute;
+    top:0.5rem;
+    border-left: .125rem solid var(--very-dark-gray); 
+    height: 95%;
+}
+
+.comments-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.comments-sub-container,
+.replies-to-comment-sub-container {
+    background-color: var(--very-dark-gray);
+    border-radius: var(--r12);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "comment-header comment-header comment-header"
+        "comment-content comment-content comment-content"
+        "scorebox . reply-btn"
+    padding: 1rem;
+    position: relative;    
+}
+
+.vote-button {
+    filter: grayscale(100%) brightness(70%);
+}
+
+.score-box {
+    grid-area: scorebox;
+    background-color: var(--dark-gray);
+    border-radius: var(--r10);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2.5rem;
+    width: 6.25rem;
+    padding: var(--r10) var(--r12) var(--r10) var(--r15);
+}
 
 
 
