@@ -375,7 +375,105 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     background-color: var(--soft-red);
 }
 
+#no-cancel-button:is(:hover, :focus),
+#yes-delete-button:is(:hover, :focus) {
+    filter: brightness(140%);    
+}
 
+.popup {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+}
+
+.popup .popuptext {
+    width: 10rem;
+    background-color: var(--soft-red);
+    color: var(--white);
+    font-size: var(--r14);
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.35rem 0;
+    podition: absolute;
+    z-index: 1;
+    bottom: -0.5rem;
+    left: -4.5rem;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.popup.fadeout .popuptext {
+    opacity: 0;
+}
+
+.popup .popuptext::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -0.4rem;
+    border-width: 0.4rem;
+    border-style: solid;
+    border-color: var(--soft-red) transparent transparent transparent;
+}
+
+#day-night-toggle {
+    podition: fixed;
+    top: 1.8rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: var(--r10);
+}
+
+#toggle-switch {
+    height: var(--r20);
+    width: 2.5rem;
+    font-size: 0;
+}
+
+.input[tupe="checkbox"] {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+#toggle-label {
+    background-color: transparent
+    border: .0625rem solid var(--gray3);
+    border-radius: var(--r12);
+    cursor: pointer;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    transition: 0.3s;
+}
+
+#toggle-label:hover {
+    background-color: var(--dark-gray);
+}
+
+#toggle-label::after {
+    content: "";
+    background-color: var(--white);
+    height: var(--r12);
+    width: var(--r12);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50%b- .375rem);
+    left: .25rem;
+    transition: 0.5s;
+}
+
+input:checked + #toggle-label::after {
+    transform: transformx(160%);
+}
+
+.icon-dark {
+    filter: invert(100%) brightness(150%);
+}
 
 
 
