@@ -54,7 +54,7 @@ textarea {
 
 body, main, all-comments-container {
     display: grid;
-    place-contents: center;
+    place-content: center;
 }
 
 body {
@@ -124,7 +124,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
 .dot-symbol,
 .time {
     color: var(--gray2);
-    font-size:var(--r14);
+    font-size: var(--r14);
 }
 
 #current-user-indicator {
@@ -151,14 +151,14 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     gap: 1rem;
     position: relative;
     padding-left: 1rem 0 0 1.25rem;
-    margin-left: 0.25rem;
+    margin-left: 0.15rem;
 }
 
 .replies-to-comment-container::before {
     content: '';
     position: absolute;
     top:0.5rem;
-    border-left: .125rem solid var(--very-dark-gray); 
+    border-left: .125rem solid var(--dark-gray); 
     height: 95%;
 }
 
@@ -168,11 +168,14 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
 }
 
 .comments-sub-container,
-.replies-to-comment-sub-container {
+.replies-to-comments-sub-container {
     background-color: var(--very-dark-gray);
     border-radius: var(--r12);
     display: grid;
     grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 0;
+    row-gap: 1rem;
     grid-template-areas:
         "comment-header comment-header comment-header"
         "comment-content comment-content comment-content"
@@ -253,7 +256,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
 }
 
 .icon-reply,
-.icon-delete {
+.icon-edit {
     filter: grayscale(100%) brightness(170%);
     scale: 0.95;
 }
@@ -295,7 +298,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     row-gap: 1rem;
     grid-template-areas:
         "input-box input-box input-box"
-        "user-avatar . send-button";
+        "user-avatar . send-btn";
     padding: 1.5rem;    
 }
 
@@ -317,7 +320,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
 }
 
 .send-button {
-    grid-area: send-button;
+    grid-area: send-btn;
     background-color: var(--moderate-blue);
     border-radius: 0.5rem;
     color: var(--light-gray);
@@ -433,10 +436,10 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     font-size: 0;
 }
 
-.input[tupe="checkbox"] {
+.input[type="checkbox"] {
     width: 0;
     height: 0;
-    display: none;
+    visibility: hidden;
 }
 
 #toggle-label {
@@ -448,7 +451,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     height: 100%;
     position: relative;
     width: 100%;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 #toggle-label:hover {
@@ -462,16 +465,16 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     width: var(--r12);
     border-radius: 50%;
     position: absolute;
-    top: calc(50%b- .375rem);
+    top: calc(50%- .375rem);
     left: .25rem;
     transition: 0.5s;
 }
 
 input:checked + #toggle-label::after {
-    transform: transformx(160%);
+    transform: translateX(160%);
 }
 
-.icon-dark {
+#icon-dark {
     filter: invert(100%) brightness(150%);
 }
 
