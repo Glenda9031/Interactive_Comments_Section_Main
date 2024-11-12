@@ -1,0 +1,100 @@
+@media (min-width: 37.5rem) {
+    body {
+        padding: 4rem 1rem 2rem 1rem;
+    }
+
+    main {
+        gap: 1.5rem;
+        min-width: var(--r600);
+        max-width: var(--r730);
+    }
+
+    .toggle-container {
+        height: 3.5rem;
+    }
+
+    .all-comments-container {
+        gap: 1.5rem;
+    }
+
+    .score {
+        padding-top: 0.25rem;
+    }
+
+    .replies-to-comments-container {
+        gap: 1.5rem;
+        padding-left: 2.75rem;
+        margin-left: 2.75rem;
+    }
+
+    .comments-container {
+        gap: 1.5rem;
+    }
+
+    .comments-sub-container,
+    .replies-to-comments-sub-container {
+        border-radius: 1rem;
+        grid-template-columns: 2.5rem 1fr auto;
+        column-gap: 1.5rem;
+        row-gap: var(--r15);
+        grid-template-areas:
+            "scorebox comment-header reply-btn"
+            "scorebox comment-content comment-content";
+        padding: 1.5rem;
+    }
+
+    .scorebox {
+        flex-direction: column;
+        height: 6.25rem;
+        width: 100%;
+        padding: var(--r12) .3125rem;
+    }
+
+    .downvote [
+        padding-bottom: .375rem;
+    ]
+
+    .add-form {
+        border-radius: 1rem;
+        grid-template-columns: 2.5rem 1fr auto;
+        column-gap: 1rem;
+        row-gap: 1rem;
+        grid-template=areas:
+            "user-avatar input-box send-btn"
+            ". input-box ."
+    }
+
+    .user.avator.current {
+        height: 2.5rem;
+    }
+
+    .send-button {
+        align-self: flex-start;
+    }
+
+    .delete-comment-container {
+        padding: 0;
+    }
+
+    #delete-comment-box {
+        border-radius: var(--r10);
+        gap: var(--r20);
+        padding: 2rem;
+        width: 25rem;
+    }
+
+    #delete-button-grp {
+        gap: var(--r14);
+    }
+
+    #day-night-toggle {
+        top: 1rem;
+    }
+}
+
+
+
+
+
+
+
