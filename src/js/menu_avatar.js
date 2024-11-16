@@ -30,5 +30,23 @@ avatar.addEventListener('click', () => {
     // Add the clicked username to the beginning of the array
     usernameArray.push(name);
 
+    // Empty all avatar elements in navMenu
+    navMenu.innerHTML = defaultNavElements;
     
-})
+    // Recreate the avatars in an updated order
+    usernameArray.forEach(username => {
+        navMenu.appendChild(createMenuAvatarElement(username));
+    });
+});
+
+return avatar;
+
+window.addEventListener('load', () => {
+    navMenu.innerHTML = defaultNavElements;
+
+    usernameArray.forEach(username => {
+        navMenu.appendChild(createMenuAvatarElement(username));
+    });
+});
+
+
