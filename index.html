@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/menu.css">
-  <link rel="stylesheet" href="./src/css/light_theme.css">
-  <link rel="stylesheet" href="./src/css/tablet_desktop.css">  
+
   <title>Frontend Mentor | Interactive comments section</title>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./src/css/styles.css">
+  <link rel="stylesheet" href="./src/css/light_theme.css">
+  <link rel="stylesheet" href="./src/css/tablet_desktop.css">
+  <link rel="stylesheet" href="./src/css/menu.css">
 </head>
+
 <body>
-  <!--<header class="toggle-container">
+  <header class="toggle-container">
     <div id="day-night-toggle">
-      <img src="./src/images/icon-dark-mode.svg" alt="dark mode icon" id="icon-dark">
+      <img id="icon-dark" src="./src/images/icon-dark-mode.svg" alt="icon-moon">
       <div id="toggle-switch">
         <input type="checkbox" id="toggle">
         <label for="toggle" id="toggle-label"></label>
       </div>
-      <img src="./src/images/icon-light-mode.svg" alt="light mode icon" id="icon-light">
-    </div>-->
+      <img id="icon-light" src="./src/images/icon-light-mode.svg" alt="icon-sun">
+    </div>
 
     <nav class="menu">
-      <!-- Menu avatars -->
+      <!-- menu avatars generated thr menu_avatar.js -->
     </nav>
   </header>
 
@@ -30,13 +36,13 @@
     <h1 class="title">Comments</h1>
 
     <div class="all-comments-container">
-      <!-- Comments -->
+      <!-- content generated thr script.js -->
     </div>
 
     <div class="delete-comment-container">
       <div id="delete-comment-box">
         <p id="delete-comment-heading">Delete Comment</p>
-        <p id="delete-comment-msg">Are you sure you want ro delete this comment? This will delete this comment and cannot be undone.</p>
+        <p id="delete-comment-msg">Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
         <div id="delete-button-grp">
           <button type="button" class="next-action-button" id="no-cancel-button" aria-label="Cancel Comment">No, cancel</button>
           <button type="button" class="next-action-button" id="yes-delete-button" aria-label="Delete Comment">Yes, delete</button>
@@ -44,7 +50,9 @@
       </div>
     </div>
   </main>
+
   <script type="module" src="./src/js/script.js"></script>
   <script type="module" src="./src/js/color_theme.js"></script>
 </body>
+
 </html>

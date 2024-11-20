@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
+    /* Default font styles */
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--gray3);
+
     /* Primary */
     --moderate-blue: hsl(238, 40%, 52%);
     --soft-red: hsl(358, 79%, 66%);
@@ -21,14 +36,6 @@
     --white: hsl(0, 0%, 100%);
 }
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
     --r730: calc((730 / var(--base) * 1rem));
     --r600: calc((600 / var(--base) * 1rem));
@@ -46,24 +53,21 @@ html:focus-within {
     scroll-behavior: smooth;
 }
 
+/* Inherit fonts */
 input,
 button,
 textarea {
     font: inherit;
 }
 
-body, main, all-comments-container {
+/* Body, main, toggle-container and all-comments container styles */
+body, main, .all-comments-container {
     display: grid;
     place-content: center;
 }
 
 body {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
     background-color: var(--almost-black);
-    color: var(--gray3);
     min-height: 100svh;
     padding: 5.5rem 1rem;
 }
@@ -79,26 +83,28 @@ main {
     z-index: 1000;
     top: 0;
     left: 0;
-    width: 100%;
     height: 5rem;
+    width: 100%;
 }
 
 .all-comments-container {
     gap: 1rem;
 }
 
+/* Common button styles */
 button {
     background-color: transparent;
     border: none;
-    cursor: pointer;
     color: inherit;
-    transition: all 3s ease-in-out;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
 }
 
-button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
+button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button){
     filter: brightness(200%);
 }
 
+/* Font styles*/
 .title {
     font-size: 1.5rem;
     font-weight: 500;
@@ -114,7 +120,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     color: inherit;
     font-weight: 500;
     text-decoration: none;
-    transition; all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .username:hover {
@@ -134,7 +140,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     font-weight: 500;
     font-size: var(--r12);
     line-height: 1rem;
-    padding: .0625rem .375rem .125rem .375rem;
+    padding: 1px 6px 2px 6px;
 }
 
 #delete-comment-heading {
@@ -143,22 +149,23 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
 }
 
 #delete-comment-msg {
-    colo: var(--gray3);
+    color: var(--gray3);
 }
 
-.replies-to-comment-container {
+/* Comments container -------------------------------------------- */
+.replies-to-comments-container {
     display: grid;
     gap: 1rem;
     position: relative;
     padding-left: 1rem 0 0 1.25rem;
-    margin-left: 0.15rem;
+    margin-left: 0.25rem;
 }
 
-.replies-to-comment-container::before {
+.replies-to-comments-container::before {
     content: '';
     position: absolute;
-    top:0.5rem;
-    border-left: .125rem solid var(--dark-gray); 
+    top: 0.5rem;
+    border-left: 2px solid var(--very-dark-gray);
     height: 95%;
 }
 
@@ -176,12 +183,12 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     grid-template-rows: auto 1fr auto;
     column-gap: 0;
     row-gap: 1rem;
-    grid-template-areas:
-        "comment-header comment-header comment-header"
-        "comment-content comment-content comment-content"
-        "scorebox . reply-btn"
+    grid-template-areas: 
+            "comment-header comment-header comment-header"
+            "comment-content comment-content comment-content"
+            "scorebox . reply-btn";
     padding: 1rem;
-    position: relative;    
+    position: relative; /* to position the pop-up msg */
 }
 
 .vote-button {
@@ -201,7 +208,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
 }
 
 .downvote {
-    padding-bottom: .375rem;
+    padding-bottom: 6px;
 }
 
 .moderate-blue {
@@ -229,14 +236,14 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
 
 .user-avatar:hover {
     border: none;
-    background-image: linear-gradient(344deg, #AF40FF #5842F3 50% #00DDEB);
-    padding: .125rem;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    padding: 2px;
     scale: 1.2;
 }
 
 .reply-icon-button,
 .delete-button,
-.exit-button {
+.edit-button {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -274,6 +281,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     grid-area: comment-content !important;
 }
 
+/* Update-form */
 .update-form {
     display: flex;
     flex-direction: column;
@@ -284,8 +292,9 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     align-self: flex-end;
 }
 
-.add-container {
-    position: relative;
+/* Add container ------------------------------------------------- */
+.add-container { 
+    position: relative; /* to position the pop-up msg */
 }
 
 .add-form {
@@ -296,10 +305,10 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     grid-template-rows: 1fr auto;
     column-gap: 0;
     row-gap: 1rem;
-    grid-template-areas:
-        "input-box input-box input-box"
-        "user-avatar . send-btn";
-    padding: 1.5rem;    
+    grid-template-areas: 
+            "input-box input-box input-box"
+            "user-avatar . send-btn";
+    padding: 1.5rem;
 }
 
 .user-avatar.current {
@@ -329,27 +338,28 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     text-transform: uppercase;
 }
 
-.send-button:is(:hover, :focus) {
-    filter: brightness(140%);
+.send-button:is(:hover,:focus) {
+    filter: brightness(140%); 
     scale: 0.99;
 }
 
+/* Delete container --------------------------------------------- */
 .delete-comment-container {
     background-color: hsla(0, 0%, 10%, 0.7);
     color: var(--light-gray);
     display: none;
     place-content: center;
-    position: fixed;
     padding: 1rem;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100vh;
+    width: 100%;
 }
 
 #delete-comment-box {
     background-color: var(--dark-gray);
-    border-radius: 0.05rem;
+    border-radius: 0.5rem;
     display: grid;
     gap: 1rem;
     padding: 1.5rem;
@@ -358,8 +368,8 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
 
 #delete-button-grp {
     display: grid;
-    gap: var(--r12);
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--r12);
 }
 
 #no-cancel-button,
@@ -378,17 +388,19 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     background-color: var(--soft-red);
 }
 
-#no-cancel-button:is(:hover, :focus),
-#yes-delete-button:is(:hover, :focus) {
-    filter: brightness(140%);    
+#no-cancel-button:is(:hover,:focus),
+#yes-delete-button:is(:hover,:focus) {
+    filter: brightness(140%); 
 }
 
+/* Popup container --------------------------------------------- */
 .popup {
     position: absolute;
     top: 0;
     left: 5rem;
 }
 
+/* The actual popup (appears on top) */
 .popup .popuptext {
     width: 10rem;
     background-color: var(--soft-red);
@@ -397,7 +409,7 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     text-align: center;
     border-radius: 0.5rem;
     padding: 0.35rem 0;
-    podition: absolute;
+    position: absolute;
     z-index: 1;
     bottom: -0.5rem;
     left: -4.5rem;
@@ -405,11 +417,12 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     transition: opacity 0.4s ease-in-out;
 }
 
-.popup.fadeout .popuptext {
+.popup.fade-out .popuptext {
     opacity: 0;
 }
 
-.popup .popuptext::before {
+/* Popup arrow */
+.popup .popuptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -420,10 +433,11 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     border-color: var(--soft-red) transparent transparent transparent;
 }
 
+/* Day-night toggle switch ---------------------------------------- */
 #day-night-toggle {
-    podition: fixed;
+    position: fixed;
     top: 1.8rem;
-    right: 1rem;
+    right: 1rem;  
     display: flex;
     align-items: center;
     justify-content: left;
@@ -436,21 +450,21 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     font-size: 0;
 }
 
-.input[type="checkbox"] {
+input[type="checkbox"] {
     width: 0;
     height: 0;
     visibility: hidden;
 }
 
 #toggle-label {
-    background-color: transparent
-    border: .0625rem solid var(--gray3);
+    background-color: transparent;
+    border: 1px solid var(--gray3);
     border-radius: var(--r12);
     cursor: pointer;
     display: inline-block;
     height: 100%;
-    position: relative;
     width: 100%;
+    position: relative;
     transition: 0.5s;
 }
 
@@ -465,31 +479,15 @@ button:is(:hover):not(.send-button, #no-cancel-button, #yes-delete-button) {
     width: var(--r12);
     border-radius: 50%;
     position: absolute;
-    top: calc(50%- .375rem);
-    left: .25rem;
+    top: calc(50% - 6px);
+    left: 4px;
     transition: 0.5s;
 }
 
-input:checked + #toggle-label::after {
+input:checked + #toggle-label:after {
     transform: translateX(160%);
 }
 
 #icon-dark {
     filter: invert(100%) brightness(150%);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
