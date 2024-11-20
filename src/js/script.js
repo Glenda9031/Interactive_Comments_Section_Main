@@ -1,4 +1,4 @@
-import './menu_avatar.js';
+import '../menu_avatar.js';
 
 const allComments = document.querySelector('.all-comments-container');
 const deleteCommentContainer = document.querySelector('.delete-comment-container');
